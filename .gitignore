@@ -1,0 +1,10 @@
+# Ignore vim tempfiles
+*~
+
+# Ignore compiled target
+/target
+
+# Ignore eclipse files
+.settings
+.project
+.classpath

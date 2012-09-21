@@ -1,0 +1,38 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app>
+  	<display-name>GazoProxyServlet</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>GazoProxyServlet</display-name>
+		<servlet-name>GazoProxyServlet</servlet-name>
+		<servlet-class>dk.dtu.dtic.gazo.GazoProxyServlet</servlet-class>
+		<!-- Proxy configuration variables 
+		<init-param>
+    		<param-name>apiKey</param-name>
+    		<param-value</param-value>
+		</init-param>
+		<init-param>
+    		<param-name>imageServiceUrl</param-name>
+    		<param-value>http://staging.imageservice.cvt.dk/api</param-value>
+		</init-param>-->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GazoProxyServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GazoProxyServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
