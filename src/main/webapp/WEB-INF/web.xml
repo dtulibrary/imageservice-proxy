@@ -9,15 +9,6 @@
 		<display-name>GazoProxyServlet</display-name>
 		<servlet-name>GazoProxyServlet</servlet-name>
 		<servlet-class>dk.dtu.dtic.gazo.GazoProxyServlet</servlet-class>
-		<!-- Proxy configuration variables 
-		<init-param>
-    		<param-name>apiKey</param-name>
-    		<param-value</param-value>
-		</init-param>
-		<init-param>
-    		<param-name>imageServiceUrl</param-name>
-    		<param-value>http://staging.imageservice.cvt.dk/api</param-value>
-		</init-param>-->
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>GazoProxyServlet</servlet-name>

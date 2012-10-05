@@ -60,26 +60,20 @@ public class GazoProxyServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
-	    //String servletPath = request.getServletPath();   // /servlet/MyServlet
-	    String pathInfo = request.getPathInfo();         // /a/b;c=123
-	    //String gazoUrl = gazoRootUrl+servletPath+"/"+gazoApiKey+pathInfo;//{gazoRootUrl + gazoApiKey + path and querystring from request}
-	    String gazoUrl = gazoRootUrl+"/"+gazoApiKey+pathInfo;//{gazoRootUrl + gazoApiKey + path and querystring from request}
-	    //System.out.println("Constructed url: "+gazoUrl);
+	    String pathInfo = request.getPathInfo();
+	    String gazoUrl = gazoRootUrl+"/"+gazoApiKey+pathInfo;
       	HttpResponse gazoResponse;
 		try {
 			gazoResponse = httpClient.execute(new HttpGet(gazoUrl));
-			//System.out.println("Executed url: "+gazoUrl);
 	      	//[copy response code, content type, cache-control headers, other relevant headers from gazoResponse to response]
 	      	response.setContentLength((int)gazoResponse.getEntity().getContentLength());
 	      	response.setContentType(gazoResponse.getEntity().getContentType().getValue());
 	      	response.setStatus(gazoResponse.getStatusLine().getStatusCode());
 	      	IOUtils.copy(gazoResponse.getEntity().getContent(), response.getOutputStream());
 		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
 		}
     }
 
